@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 // 介面佈局檔中的Focusable="false"：無法取得滑鼠的focus，也無法編輯; Editable：可以取得滑鼠的focus，但無法編輯
-public class UpdateActivity extends Activity {
+public class ActivityUpdate extends Activity {
 
    private EditText id_update_edit;
    private EditText latitude_update_edit;

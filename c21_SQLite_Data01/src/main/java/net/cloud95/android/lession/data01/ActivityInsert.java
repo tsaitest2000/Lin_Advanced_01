@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class InsertActivity extends Activity {
+public class ActivityInsert extends Activity {
 
    private EditText latitude_edit;
    private EditText longitude_edit;

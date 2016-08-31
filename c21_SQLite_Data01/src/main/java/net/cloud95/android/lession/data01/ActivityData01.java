@@ -23,12 +23,12 @@ import android.widget.Toast;
 // 1.Place
 // 2.MyDBHelper
 // 3.PlaceDAO
-// 4.InsertActivity
-// 5.SearchActivity
-// 6.UpdateActivity
-// 7.Data01Activity
+// 4.ActivityInsert
+// 5.ActivityQuery
+// 6.ActivityUpdate
+// 7.ActivityData01
 
-public class Data01Activity extends Activity {
+public class ActivityData01 extends Activity {
 
    // ListView顯示資料用的畫面元件陣列
    private static final int[] IDS = {R.id.id_listview, R.id.datetime_listview, R.id.note_listview};
@@ -85,12 +85,12 @@ public class Data01Activity extends Activity {
             break;
          // 新增
          case R.id.insert_menu:
-            Intent intentInsert = new Intent(this, InsertActivity.class);
+            Intent intentInsert = new Intent(this, ActivityInsert.class);
             startActivityForResult(intentInsert, INSERT_REQUEST_CODE);
             break;
          // 搜尋
          case R.id.search_menu:
-            Intent intentSearch = new Intent(this, SearchActivity.class);
+            Intent intentSearch = new Intent(this, ActivityQuery.class);
             startActivityForResult(intentSearch, SEARCH_REQUEST_CODE);
             break;
       }
@@ -126,7 +126,7 @@ public class Data01Activity extends Activity {
       switch (id) {
          // 修改資料
          case R.id.update_menu:
-            Intent intentUpdate = new Intent(this, UpdateActivity.class);
+            Intent intentUpdate = new Intent(this, ActivityUpdate.class);
             // 設定資料編號
             intentUpdate.putExtra("id", selected.getId());
             startActivityForResult(intentUpdate, UPDATE_REQUEST_CODE);
@@ -217,7 +217,7 @@ public class Data01Activity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                // 取得使用者點擊的物件
                Place place = placeDAO.get(id);
-               Toast.makeText(Data01Activity.this, place.getNote(), Toast.LENGTH_SHORT).show();
+               Toast.makeText(ActivityData01.this, place.getNote(), Toast.LENGTH_SHORT).show();
             }
          });
    }

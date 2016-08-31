@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class SearchActivity extends Activity {
+public class ActivityQuery extends Activity {
 
    private EditText date_search_edit;
    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
