@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lin_Advanced_01.iml" filepath="$PROJECT_DIR$/Lin_Advanced_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/c21_SQLite_Data01/c21_SQLite_Data01.iml" filepath="$PROJECT_DIR$/c21_SQLite_Data01/c21_SQLite_Data01.iml" />
+    </modules>
+  </component>
+</project>

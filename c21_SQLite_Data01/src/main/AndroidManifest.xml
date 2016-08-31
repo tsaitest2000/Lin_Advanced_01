@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.cloud95.android.lession.data01"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="net.cloud95.android.lession.data01.Data01Activity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="net.cloud95.android.lession.data01.InsertActivity"
+                  android:label="INSERT"
+                  android:theme="@android:style/Theme.Holo.Dialog" />
+        
+        <activity android:name="net.cloud95.android.lession.data01.UpdateActivity"
+                  android:label="UPDATE"
+                  android:theme="@android:style/Theme.Holo.Dialog" />
+        
+        <activity android:name="net.cloud95.android.lession.data01.SearchActivity"
+                  android:label="SEARCH"
+                  android:theme="@android:style/Theme.Holo.Dialog" />
+    </application>
+
+</manifest>

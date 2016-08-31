@@ -1,0 +1,75 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:2:1-36:12
+	package
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:3:5-49
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:23.3.0] D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:8:9-35
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml
+application
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:11:5-34:19
+MERGED from [com.android.support:support-v4:23.3.0] D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:13:9-41
+	android:icon
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:12:9-45
+activity#net.cloud95.android.lession.data01.Data01Activity
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:14:9-21:20
+	android:label
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:15:13-77
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:19:27-74
+activity#net.cloud95.android.lession.data01.InsertActivity
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:23:9-25:70
+	android:label
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:24:19-41
+	android:theme
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:25:19-67
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:23:19-83
+activity#net.cloud95.android.lession.data01.UpdateActivity
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:27:9-29:70
+	android:label
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:28:19-41
+	android:theme
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:29:19-67
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:27:19-83
+activity#net.cloud95.android.lession.data01.SearchActivity
+ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:31:9-33:70
+	android:label
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:32:19-41
+	android:theme
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:33:19-67
+	android:name
+		ADDED from D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\AndroidManifest.xml:31:19-83
