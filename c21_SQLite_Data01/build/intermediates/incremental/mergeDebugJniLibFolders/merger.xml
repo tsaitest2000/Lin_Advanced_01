@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\AndroidApps\A_Lin\Data01 for Student1\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\AndroidApps\A_Lin\Data01 for Student1\app\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\src\debug\jniLibs"/></dataSet></merger>

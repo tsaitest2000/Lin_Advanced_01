@@ -7,9 +7,11 @@ import java.util.Date;
 public class Place {
 
    private long id;
-
-   private double latitude, longitude, accuracy;
-   private String datetime,  note;
+   private double latitude;
+   private double longitude;
+   private double accuracy;
+   private String datetime;
+   private String note;
 
    public Place() {
 
@@ -60,6 +62,7 @@ public class Place {
       return datetime;
    }
 
+   // 額外加入的程式碼
    public void setDatetime(long now) {
       Date date = new Date(now);
       SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -77,4 +80,5 @@ public class Place {
    public void setNote(String note) {
       this.note = note;
    }
+
 }

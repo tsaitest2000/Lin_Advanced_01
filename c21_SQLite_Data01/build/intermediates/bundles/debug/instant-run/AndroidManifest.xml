@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="net.cloud95.android.lession.data01.Data01Activity"
+            android:name="net.cloud95.android.lession.data01.ActivityData01"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +22,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="net.cloud95.android.lession.data01.InsertActivity"
+            android:name="net.cloud95.android.lession.data01.ActivityInsert"
             android:label="INSERT"
             android:theme="@android:style/Theme.Holo.Dialog" />
         <activity
-            android:name="net.cloud95.android.lession.data01.UpdateActivity"
+            android:name="net.cloud95.android.lession.data01.ActivityUpdate"
             android:label="UPDATE"
             android:theme="@android:style/Theme.Holo.Dialog" />
         <activity
-            android:name="net.cloud95.android.lession.data01.SearchActivity"
+            android:name="net.cloud95.android.lession.data01.ActivityQuery"
             android:label="SEARCH"
             android:theme="@android:style/Theme.Holo.Dialog" />
     </application>

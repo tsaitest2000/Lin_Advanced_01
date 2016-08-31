@@ -8,10 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyDBHelper extends SQLiteOpenHelper {
 
    // 資料庫名稱
-   public static final String DatabaseName = "mydata.db";
+   public static final String DatabaseName = "myData.db"; // ★★★ 本是mydata.db ，被我改掉了 ...................
 
    // 資料庫版本，資料結構改變的時候要更改這個數字，通常是加一
    public static final int VERSION = 1;
+
    // 資料庫物件，固定的欄位變數
    private static SQLiteDatabase database;
 
@@ -28,6 +29,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
       return database;
    }
 
+   // ★★★ onCreate與onUpgrade是兩個獨立的方法，兩者之間並沒有先後的順序問題
    @Override
    public void onCreate(SQLiteDatabase db) {
       // 建立應用程式需要的表格

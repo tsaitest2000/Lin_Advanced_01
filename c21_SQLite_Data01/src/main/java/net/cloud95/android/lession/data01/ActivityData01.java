@@ -28,6 +28,23 @@ import android.widget.Toast;
 // 6.ActivityUpdate
 // 7.ActivityData01
 
+// InsertActivity, UpdateActivity, QueryActivity都設定成 Very Cool! 就這，就不會完全擋住後面了
+//<activity android:name=".ActivityInsert"
+//   android:label="INSERT"
+//   android:theme="@android:style/Theme.Holo.Dialog" />
+//
+//   <activity android:name=".ActivityUpdate"
+//   android:label="UPDATE"
+//   android:theme="@android:style/Theme.Holo.Dialog" />
+//
+//   <activity android:name=".ActivityQuery"
+//   android:label="SEARCH"
+//   android:theme="@android:style/Theme.Holo.Dialog" />
+//   </application>
+
+// ★ 老師的規劃中，Insert, Update, Query的Activity中都沒有使用純SQL語法，老師說我可以使用純SQL語法進行撰寫，是可以的 .................
+// 執行時會列出約十筆的資料列，在任一筆上Ｌｏｎｇ　Ｃｌｉｃｋ會出現可以Update與Delete的頁面 ...........................................
+
 public class ActivityData01 extends Activity {
 
    // ListView顯示資料用的畫面元件陣列
