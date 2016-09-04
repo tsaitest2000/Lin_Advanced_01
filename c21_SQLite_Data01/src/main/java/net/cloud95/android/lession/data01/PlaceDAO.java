@@ -15,57 +15,56 @@ import java.util.Date;
 // ★★ Sqlite3沒有支援所有的SQL語法，請特別留意 ............................................
 public class PlaceDAO {
 
-   public static final String TABLE_NAME = "place"; // 表格名稱
+   public static final String TABLE_NAME = "place";
 
    public static final String KEY_ID = "_id"; // 編號表格欄位名稱，固定不變
-   public static final String COLUMN_LATITUDE = "latitude"; // 其它需要的表格欄位名稱
-   public static final String COLUMN_LONGITUDE = "longitude";
-   public static final String COLUMN_ACCURACY = "accuracy";
-   public static final String COLUMN_DATETIME = "datetime";
-   public static final String COLUMN_NOTE = "note";
+   public static final String COL_LATITUDE = "latitude";
+   public static final String COL_LONGITUDE = "longitude";
+   public static final String COL_ACCURACY = "accuracy";
+   public static final String COL_DATETIME = "datetime";
+   public static final String COL_NOTE = "note";
 
    // 所有欄位名稱陣列，把所有表格欄位名稱變數湊起來建立一個字串陣列
-   public static final String[] COLUMNS = {KEY_ID, COLUMN_LATITUDE, COLUMN_LONGITUDE, COLUMN_ACCURACY, COLUMN_DATETIME, COLUMN_NOTE};
+   public static final String[] COLUMNS = {KEY_ID, COL_LATITUDE, COL_LONGITUDE, COL_ACCURACY, COL_DATETIME, COL_NOTE};
    // 顯示用欄位名稱陣列，在資料查詢畫面上希望顯示位置表格的編號、日期時間和說明
-   public static final String[] COLUMNS_SHOW = {KEY_ID, COLUMN_DATETIME, COLUMN_NOTE};
+   public static final String[] COLUMNS_SHOW = {KEY_ID, COL_DATETIME, COL_NOTE};
 
    public static final String CREATE_TABLE = // 使用上面宣告的變數建立表格的SQL指令
       "CREATE TABLE " + TABLE_NAME + " ( " +
-         KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LATITUDE + " REAL NOT NULL, " +
-         COLUMN_LONGITUDE + " REAL NOT NULL, " + COLUMN_ACCURACY + " REAL NOT NULL, " +
-         COLUMN_DATETIME + " TEXT NOT NULL, " + COLUMN_NOTE + " TEXT NOT NULL)";
+         KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_LATITUDE + " REAL NOT NULL, " +
+         COL_LONGITUDE + " REAL NOT NULL, " + COL_ACCURACY + " REAL NOT NULL, " +
+         COL_DATETIME + " TEXT NOT NULL, " + COL_NOTE + " TEXT NOT NULL)";
 
-   private SQLiteDatabase database; // 資料庫物件
+   private SQLiteDatabase database;
 
    public PlaceDAO(Context context) { // 建構子，一般的應用都不需要修改
       database = MyDBHelper.getDatabase(context);
    }
 
-   // 關閉資料庫，一般的應用都不需要修改
    // ★★★ SQLite只針對單一用戶 → 多支程式要處理同個資料庫 → 先連線者取得鎖定 → 使用完關閉讓其它程式連入
-   public void close() {
+   public void closeDatabase() {
       database.close();
    }
 
    public Place insert(Place place) { // 新增參數指定的物件 → 建立準備新增資料的ContentValues物件
       ContentValues cv = new ContentValues(); // ContentValues物件包裝新增資料 (欄位名稱, 欄位資料)
-      cv.put(COLUMN_LATITUDE, place.getLatitude());
-      cv.put(COLUMN_LONGITUDE, place.getLongitude());
-      cv.put(COLUMN_ACCURACY, place.getAccuracy());
-      cv.put(COLUMN_DATETIME, place.getDatetime());
-      cv.put(COLUMN_NOTE, place.getNote());
+      cv.put(COL_LATITUDE, place.getLatitude());
+      cv.put(COL_LONGITUDE, place.getLongitude());
+      cv.put(COL_ACCURACY, place.getAccuracy());
+      cv.put(COL_DATETIME, place.getDatetime());
+      cv.put(COL_NOTE, place.getNote());
       long id = database.insert(TABLE_NAME, null, cv); // 新增一筆資料並取得編號 (表格名, 欄位預設值, ContentValues物件)
       place.setId(id); // 設定編號
-      return place; // 回傳結果
+      return place;
    }
 
    public boolean update(Place place) { // 修改參數指定的物件 → 建立準備修改資料的ContentValues物件
       ContentValues cv = new ContentValues(); // ContentValues物件包裝修改資料，參數一:欄位名稱 參數二:欄位資料
-      cv.put(COLUMN_LATITUDE, place.getLatitude());
-      cv.put(COLUMN_LONGITUDE, place.getLongitude());
-      cv.put(COLUMN_ACCURACY, place.getAccuracy());
-      cv.put(COLUMN_DATETIME, place.getDatetime());
-      cv.put(COLUMN_NOTE, place.getNote());
+      cv.put(COL_LATITUDE, place.getLatitude());
+      cv.put(COL_LONGITUDE, place.getLongitude());
+      cv.put(COL_ACCURACY, place.getAccuracy());
+      cv.put(COL_DATETIME, place.getDatetime());
+      cv.put(COL_NOTE, place.getNote());
       String where = KEY_ID + "=" + place.getId(); // 設定修改資料的條件為編號，格式為「欄位名稱＝資料」
       return database.update(TABLE_NAME, cv, where, null) > 0; // 執行修改資料並回傳修改的資料數量是否成功
    }
@@ -83,7 +82,7 @@ public class PlaceDAO {
 
    // 取得參數指定日期資料的Cursor物件 ★ date例如：2016-08-31 選定日期後按下確定按鈕時所要執行的程式區塊
    /* ★★ 在SQL中第一個索引值是一，而不是零 ★★ */
-   public Cursor getCursor_Search(String date) {
+   public Cursor getCursor_query(String date) {
       // 設定條件為查詢日期時間欄位的前十個字元(日期部份) 格式為「substr(欄位名稱,開始,個數)='資料'」
       String where = "substr(datetime, 1, 10)='" + date + "'";
       Cursor result = database.query(TABLE_NAME, COLUMNS_SHOW, where, null, null, null, null); // 查詢指定日期條件的資料
@@ -91,14 +90,14 @@ public class PlaceDAO {
    } /* 參數：selectionArgs是用來支援selection的 如 where name=林俊志,李俊志,王俊志 */
 
    public Place get(long id) { // 取得指定編號的資料物件
-      Place place = null; // 準備回傳結果用的物件
+      Place place = null;
       String where = KEY_ID + "=" + id; // 使用編號為查詢條件
-      Cursor resultCursor = database.query(TABLE_NAME, COLUMNS, where, null, null, null, null, null); // 執行查詢
+      Cursor resultCursor = database.query(TABLE_NAME, COLUMNS, where, null, null, null, null, null);
       if (resultCursor.moveToFirst()) { // 如果有查詢結果
          place = getRecord(resultCursor); // 讀取包裝一筆資料的物件
       } /*查詢結束時會是一個類似表格的東西，此時Cursor是指在第一筆資料之前 */
       resultCursor.close(); // 關閉Cursor物件，釋放記憶體
-      return place; // 回傳結果
+      return place;
    }
 
    // 把Cursor目前的資料包裝為物件
@@ -111,7 +110,7 @@ public class PlaceDAO {
       result.setAccuracy(cursor.getDouble(3));
       result.setDatetime(cursor.getString(4));
       result.setNote(cursor.getString(5));
-      return result; // 回傳結果
+      return result;
    }
 
    // 首次執行應用程式時會新增的範例資料 → 透過SharedPeference物件紀錄是否為首次執行此應用程式

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item 
-        android:id="@+id/refresh_menu"
+        android:id="@+id/menu_refresh"
         android:title="REFRESH"
         android:icon="@drawable/refresh_icon"
         android:showAsAction="always" />    
     <item 
-        android:id="@+id/insert_menu"
+        android:id="@+id/menu_insert"
         android:title="INSERT"
         android:icon="@drawable/insert_icon"
         android:showAsAction="always" />
     <item 
-        android:id="@+id/search_menu"
+        android:id="@+id/menu_query"
         android:title="SEARCH"
         android:icon="@drawable/search_icon"
         android:showAsAction="always" />

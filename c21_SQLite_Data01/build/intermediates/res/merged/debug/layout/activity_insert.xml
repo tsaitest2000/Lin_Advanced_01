@@ -50,7 +50,7 @@
                 android:id="@+id/accuracy_edit"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
         </TableRow>
-        <!-- 
+        <!--
         <TableRow>
             <TextView
                 android:text="DateTime:"
@@ -58,7 +58,7 @@
             <EditText
                 android:id="@+id/datetime_edit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>        
+        </TableRow>
 	     -->
         <TableRow>
 
