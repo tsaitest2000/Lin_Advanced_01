@@ -3,7 +3,7 @@ package net.cloud95.android.lession.data01;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// 位置類別，一個Place物件就代表一個位置資料
+// DAO設計模式中的"紀錄層"。Place為位置類別，一個Place物件就代表一個位置資料
 public class Place {
 
    private long id;
@@ -62,7 +62,7 @@ public class Place {
       return datetime;
    }
 
-   // 額外加入的程式碼
+   // 額外加入的程式碼 三個 M：月份的縮寫、四個 M：月份的全名。HH：24小時制、hh：12小時制
    public void setDatetime(long now) {
       Date date = new Date(now);
       SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");

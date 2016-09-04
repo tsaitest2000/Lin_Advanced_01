@@ -182,7 +182,7 @@ public class ActivityData01 extends Activity {
             // 取得搜尋日期
             String dateValue = data.getStringExtra("dateValue");
             // 查詢指定的日期
-            Cursor cursor = placeDAO.getSearchCursor(dateValue);
+            Cursor cursor = placeDAO.getCursor_Search(dateValue);
             // 建立給ListView元件使用的Adapter物件
             // 第一個參數是Context物件
             // 第二個參數是項目使用的畫面配置資源
@@ -194,7 +194,7 @@ public class ActivityData01 extends Activity {
                this,
                R.layout.listview_place,
                cursor,
-               PlaceDAO.SHOW_COLUMNS,
+               PlaceDAO.COLUMNS_SHOW,
                IDS,
                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
             );
@@ -208,7 +208,7 @@ public class ActivityData01 extends Activity {
 
    private void refresh() {
       // 查詢全部資料
-      Cursor cursor = placeDAO.getAllCursor();
+      Cursor cursor = placeDAO.getCursor_All();
       // 建立給ListView元件使用的Adapter物件
       // 第一個參數是Context物件
       // 第二個參數是項目使用的畫面配置資源
@@ -218,7 +218,7 @@ public class ActivityData01 extends Activity {
       // 第六個參數指定為CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
       SimpleCursorAdapter sca = new SimpleCursorAdapter(
          this, R.layout.listview_place,
-         cursor, PlaceDAO.SHOW_COLUMNS, IDS,
+         cursor, PlaceDAO.COLUMNS_SHOW, IDS,
          CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
       // 設定ListView元件使用的Adapter物件
       list_view.setAdapter(sca);
