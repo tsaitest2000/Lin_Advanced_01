@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lin_Advanced_01.iml" filepath="$PROJECT_DIR$/Lin_Advanced_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/c21_SQLite_Data01/c21_SQLite_Data01.iml" filepath="$PROJECT_DIR$/c21_SQLite_Data01/c21_SQLite_Data01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlite_home/sqlite_home.iml" filepath="$PROJECT_DIR$/sqlite_home/sqlite_home.iml" />
     </modules>
   </component>
 </project>

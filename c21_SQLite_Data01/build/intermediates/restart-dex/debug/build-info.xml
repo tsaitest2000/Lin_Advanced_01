@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="x86,armeabi-v7a,armeabi"
     api-level="23"
-    density="420dpi"
+    density="xxhdpi"
     format="7"
-    timestamp="2283221003793"
+    timestamp="15670650740309"
     token="-7102077260174082789" >
 
     <task
         name="javac"
-        duration="167" />
+        duration="949" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1475" />
+        duration="289" />
     <task
         name="verifier"
-        duration="1" />
+        duration="39" />
 
     <artifact
-        location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-        type="DEX" />
+        location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\outputs\apk\c21_SQLite_Data01-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="2111170034071" >
+    <build timestamp="15670650740309" >
         <artifact
             location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\outputs\apk\c21_SQLite_Data01-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="2283221003793" >
-        <artifact
-            location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

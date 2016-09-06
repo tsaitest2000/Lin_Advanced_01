@@ -1,2 +1,0 @@
-CHANGED,D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\cloud95\android\lession\data01\ActivityUpdate$override.class
-CHANGED,D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
