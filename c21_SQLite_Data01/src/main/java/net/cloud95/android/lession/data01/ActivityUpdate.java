@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-// 介面佈局檔中的Focusable="false"：無法取得滑鼠聚焦也無法編輯; Editable：可以取得滑鼠聚焦，但無法編輯
 public class ActivityUpdate extends Activity {
 
    private EditText et_update_id;
@@ -18,18 +17,18 @@ public class ActivityUpdate extends Activity {
    private EditText et_update_note;
 
    private Place place;
-   private PlaceDAO placeDAO;// 資料庫物件
+   private PlaceDAO placeDAO;
 
    @Override
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_update);
 
-      placeDAO = new PlaceDAO(this); // 取得資料庫物件
+      placeDAO = new PlaceDAO(this);
 
       Intent intent = getIntent();
       long id = intent.getLongExtra("id", -1); // 讀取修改資料的編號
-      place = placeDAO.get(id); // 取得指定編號的物件
+      place = placeDAO.query_id(id); // 取得指定編號的物件
       buildViews();
    }
 
@@ -41,7 +40,6 @@ public class ActivityUpdate extends Activity {
       et_update_datetime = (EditText) findViewById(R.id.et_update_datetime);
       et_update_note = (EditText) findViewById(R.id.et_update_note);
 
-      // 設定畫面元件顯示的資料
       et_update_id.setText(Long.toString(place.getId()));
       et_update_latitude.setText(Double.toString(place.getLatitude()));
       et_update_longitude.setText(Double.toString(place.getLongitude()));
@@ -50,30 +48,26 @@ public class ActivityUpdate extends Activity {
       et_update_note.setText(place.getNote());
    }
 
-   public void clickOk(View view) {
-      // 讀取使用者輸入的資料
-      double latitude = Double.parseDouble(et_update_latitude.getText().toString());
-      double longitude = Double.parseDouble(et_update_longitude.getText().toString());
-      double accuracy = Double.parseDouble(et_update_accuracy.getText().toString());
-      String datetime = et_update_datetime.getText().toString();
-      String note = et_update_note.getText().toString();
+   public void onClick(View view) {
+      switch (view.getId()) {
+         case R.id.btn_update_cancel:
+            finish();
+            break;
+         case R.id.btn_update_ok:
+            place.setLatitude(Double.parseDouble(et_update_latitude.getText().toString()));
+            place.setLongitude(Double.parseDouble(et_update_longitude.getText().toString()));
+            place.setAccuracy(Double.parseDouble(et_update_accuracy.getText().toString()));
+            place.setDatetime(et_update_datetime.getText().toString());
+            place.setNote(et_update_note.getText().toString());
 
-      // 把讀取的資料設定給物件
-      place.setLatitude(latitude);
-      place.setLongitude(longitude);
-      place.setAccuracy(accuracy);
-      place.setDatetime(datetime);
-      place.setNote(note);
-
-      placeDAO.update(place); // 修改
-      Toast.makeText(this, "資料更新完成", Toast.LENGTH_SHORT).show();
-      Intent intent = getIntent();
-      setResult(Activity.RESULT_OK, intent); // 設定回傳結果
-      finish(); // 結束
-   }
-
-   public void clickCancel(View view) {
-      finish(); // 結束
+            placeDAO.update(place);
+            Toast.makeText(this, "資料更新完成", Toast.LENGTH_SHORT).show();
+            Intent intent = getIntent();
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+            break;
+      }
    }
 
 }
+// 介面佈局檔中的Focusable="false"：無法取得滑鼠聚焦也無法編輯; Editable：可以取得滑鼠聚焦，但無法編輯

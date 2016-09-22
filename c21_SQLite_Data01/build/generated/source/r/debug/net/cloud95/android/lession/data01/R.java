@@ -18,37 +18,37 @@ public final class R {
         public static final int search_icon=0x7f020004;
     }
     public static final class id {
-        public static final int accuracy_edit=0x7f060003;
-        public static final int cancel_button=0x7f060005;
-        public static final int cancel_search_button=0x7f060008;
-        public static final int cancel_update_button=0x7f060010;
-        public static final int date_search_edit=0x7f060007;
-        public static final int datetime_listview=0x7f060013;
+        public static final int btn_insert_cancel=0x7f060005;
+        public static final int btn_insert_ok=0x7f060006;
+        public static final int btn_query_cancel=0x7f060008;
+        public static final int btn_query_ok=0x7f060009;
+        public static final int btn_update_cancel=0x7f060010;
+        public static final int btn_update_ok=0x7f060011;
+        public static final int edit_query_date=0x7f060007;
+        public static final int et_insert_accuracy=0x7f060003;
+        public static final int et_insert_latitude=0x7f060001;
+        public static final int et_insert_longitude=0x7f060002;
+        public static final int et_insert_note=0x7f060004;
         public static final int et_update_accuracy=0x7f06000d;
         public static final int et_update_datetime=0x7f06000e;
         public static final int et_update_id=0x7f06000a;
         public static final int et_update_latitude=0x7f06000b;
         public static final int et_update_longitude=0x7f06000c;
         public static final int et_update_note=0x7f06000f;
-        public static final int id_listview=0x7f060012;
-        public static final int latitude_edit=0x7f060001;
-        public static final int list_view=0x7f060000;
-        public static final int longitude_edit=0x7f060002;
+        public static final int lv_activity_data01=0x7f060000;
+        public static final int lv_place_date_time=0x7f060013;
+        public static final int lv_place_id=0x7f060012;
+        public static final int lv_place_note=0x7f060014;
         public static final int menu_delete=0x7f060019;
         public static final int menu_insert=0x7f060016;
         public static final int menu_query=0x7f060017;
         public static final int menu_refresh=0x7f060015;
         public static final int menu_update=0x7f060018;
-        public static final int note_edit=0x7f060004;
-        public static final int note_listview=0x7f060014;
-        public static final int ok_button=0x7f060006;
-        public static final int ok_search_button=0x7f060009;
-        public static final int ok_update_button=0x7f060011;
     }
     public static final class layout {
         public static final int activity_data01=0x7f030000;
         public static final int activity_insert=0x7f030001;
-        public static final int activity_search=0x7f030002;
+        public static final int activity_query=0x7f030002;
         public static final int activity_update=0x7f030003;
         public static final int listview_place=0x7f030004;
     }

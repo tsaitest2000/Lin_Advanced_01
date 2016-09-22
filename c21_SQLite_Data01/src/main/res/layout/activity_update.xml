@@ -94,19 +94,19 @@
         android:padding="3dp">
 
         <Button
-            android:id="@+id/cancel_update_button"
+            android:id="@+id/btn_update_cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="clickCancel"
+            android:onClick="onClick"
             android:text="@android:string/cancel"/>
 
         <Button
-            android:id="@+id/ok_update_button"
+            android:id="@+id/btn_update_ok"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="clickOk"
+            android:onClick="onClick"
             android:text="@android:string/ok"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
     </LinearLayout>

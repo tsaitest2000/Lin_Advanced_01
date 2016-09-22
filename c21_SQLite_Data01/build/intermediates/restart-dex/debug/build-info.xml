@@ -4,27 +4,27 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="15670650740309"
+    timestamp="53579043034673"
     token="-7102077260174082789" >
 
     <task
         name="javac"
-        duration="949" />
+        duration="418" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="289" />
+        duration="167" />
     <task
         name="verifier"
-        duration="39" />
+        duration="26" />
 
     <artifact
         location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\outputs\apk\c21_SQLite_Data01-debug.apk"
         type="MAIN" />
 
-    <build timestamp="15670650740309" >
+    <build timestamp="53579043034673" >
         <artifact
             location="D:\AndroidApps\A_Lin\Lin_Advanced_01\c21_SQLite_Data01\build\outputs\apk\c21_SQLite_Data01-debug.apk"
             type="MAIN" />

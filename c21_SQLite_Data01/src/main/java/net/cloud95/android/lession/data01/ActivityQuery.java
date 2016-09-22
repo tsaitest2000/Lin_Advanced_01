@@ -15,76 +15,63 @@ import java.util.Date;
 
 public class ActivityQuery extends Activity {
 
-   private EditText date_search_edit;
-   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+   private EditText edit_query_date;
+   private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
    @Override
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_search);
+      setContentView(R.layout.activity_query);
 
-      processViews();
+      buildViews();
    }
 
-   private void processViews() {
-      date_search_edit = (EditText) findViewById(R.id.date_search_edit);
+   private void buildViews() {
+      edit_query_date = (EditText) findViewById(R.id.edit_query_date);
 
-      // 設定為今天的日期
-      Date date = new Date();
-      date_search_edit.setText(dateFormat.format(date));
+      Date date = new Date(); // 設定為今天的日期
+      edit_query_date.setText(simpleDateFormat.format(date));
    }
 
+   // edit_query_date元件被按下時執行的程式區塊
    public void clickDateSearch(View view) {
-      String dateValue = date_search_edit.getText().toString();
-      Date date = new Date();
-
-      // 轉換目前的日期為Date物件
       try {
-         date = dateFormat.parse(dateValue);
+         String dateValue = edit_query_date.getText().toString();
+         Date date = simpleDateFormat.parse(dateValue);
+         Calendar calendar = Calendar.getInstance();
+         calendar.setTime(date);
+
+         DatePickerDialog dialog = new DatePickerDialog(
+            this,
+            new OnDateSetListener() {
+               @Override
+               public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                  Calendar cdr = Calendar.getInstance();
+                  cdr.set(year, monthOfYear, dayOfMonth);
+                  edit_query_date.setText(simpleDateFormat.format(cdr.getTime()));
+               }
+            },
+            calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)
+         );
+         dialog.show();
       } catch (Exception e) {
          e.printStackTrace();
       }
-
-      // 讀取日期物件中的年、月、日
-      Calendar calendar = Calendar.getInstance();
-      calendar.setTime(date);
-      int year = calendar.get(Calendar.YEAR);
-      final int month = calendar.get(Calendar.MONTH);
-      int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-      // 日期對話框設定監聽物件
-      OnDateSetListener listener = new OnDateSetListener() {
-         @Override
-         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            // 設定畫面元件為設定的日期
-            Calendar cdr = Calendar.getInstance();
-            cdr.set(year, monthOfYear, dayOfMonth);
-            date_search_edit.setText(dateFormat.format(cdr.getTime()));
-         }
-      };
-
-      // 建立日期對話框物件
-      DatePickerDialog dialog = new DatePickerDialog(this, listener, year, month, day);
-
-      // 顯示日期對話框
-      dialog.show();
    }
 
-   public void clickOk(View view) {
-      String dateValue = date_search_edit.getText().toString();
-      Intent intent = getIntent();
-      // 加入設定的日期資料
-      intent.putExtra("dateValue", dateValue);
-
-      // 設定回傳結果
-      setResult(Activity.RESULT_OK, intent);
-      // 結束
-      finish();
-   }
-
-   public void clickCancel(View view) {
-      // 結束
-      finish();
+   public void onClick(View view) {
+      switch (view.getId()) {
+         case R.id.btn_query_cancel:
+            finish();
+            break;
+         case R.id.btn_query_ok:
+            String dateValue = edit_query_date.getText().toString();
+            Intent intent = getIntent();
+            intent.putExtra("dateValue", dateValue); // 加入設定的日期資料
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+            break;
+      }
    }
 
 }

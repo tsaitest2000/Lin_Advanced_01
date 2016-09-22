@@ -21,39 +21,36 @@ public class ActivityInsert extends Activity {
       setContentView(R.layout.activity_insert);
 
       buildViews();
-      placeDAO = new PlaceDAO(this); // 取得資料庫物件
+      placeDAO = new PlaceDAO(this);
    }
 
    private void buildViews() {
-      et_insert_latitude = (EditText) findViewById(R.id.latitude_edit);
-      et_insert_longitude = (EditText) findViewById(R.id.longitude_edit);
-      et_insert_accuracy = (EditText) findViewById(R.id.accuracy_edit);
-      et_insert_note = (EditText) findViewById(R.id.note_edit);
+      et_insert_latitude = (EditText) findViewById(R.id.et_insert_latitude);
+      et_insert_longitude = (EditText) findViewById(R.id.et_insert_longitude);
+      et_insert_accuracy = (EditText) findViewById(R.id.et_insert_accuracy);
+      et_insert_note = (EditText) findViewById(R.id.et_insert_note);
    }
 
-   public void clickOk(View view) { // 讀取使用者輸入的資料
-      double latitude = Double.parseDouble(et_insert_latitude.getText().toString());
-      double longitude = Double.parseDouble(et_insert_longitude.getText().toString());
-      double accuracy = Double.parseDouble(et_insert_accuracy.getText().toString());
-      String note = et_insert_note.getText().toString();
+   public void onClick(View view) {
+      switch (view.getId()) {
+         case R.id.btn_insert_cancel:
+            finish();
+            break;
+         case R.id.btn_insert_ok:
+            Place place = new Place(); // 建立準備新增資料的物件 → Place型別物件沒有id值
+            place.setLatitude(Double.parseDouble(et_insert_latitude.getText().toString()));
+            place.setLongitude(Double.parseDouble(et_insert_longitude.getText().toString()));
+            place.setAccuracy(Double.parseDouble(et_insert_accuracy.getText().toString()));
+            place.setDatetime(System.currentTimeMillis());
+            place.setNote(et_insert_note.getText().toString());
 
-      Place place = new Place(); // 建立準備新增資料的物件 → Place型別物件沒有id值
-      // 把讀取的資料設定給物件
-      place.setLatitude(latitude);
-      place.setLongitude(longitude);
-      place.setAccuracy(accuracy);
-      place.setDatetime(System.currentTimeMillis()); // ===
-      place.setNote(note);
-
-      place = placeDAO.insert(place); // → Place型別物件已有id值
-      Toast.makeText(this, "資料新增成功", Toast.LENGTH_SHORT).show();
-      Intent intent = getIntent();
-      setResult(Activity.RESULT_OK, intent);
-      finish();
-   }
-
-   public void clickCancel(View view) {
-      finish();
+            place = placeDAO.insert(place); // → Place型別物件已有id值
+            Toast.makeText(this, "資料新增成功", Toast.LENGTH_SHORT).show();
+            Intent intent = getIntent();
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+            break;
+      }
    }
 
 }

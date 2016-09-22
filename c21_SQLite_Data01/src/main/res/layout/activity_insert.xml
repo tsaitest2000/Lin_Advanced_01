@@ -23,7 +23,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <EditText
-                android:id="@+id/latitude_edit"
+                android:id="@+id/et_insert_latitude"
                 android:text="25.04719"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
         </TableRow>
@@ -35,7 +35,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <EditText
-                android:id="@+id/longitude_edit"
+                android:id="@+id/et_insert_longitude"
                 android:text="121.516981"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
         </TableRow>
@@ -47,7 +47,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <EditText
-                android:id="@+id/accuracy_edit"
+                android:id="@+id/et_insert_accuracy"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
         </TableRow>
         <!--
@@ -68,7 +68,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <EditText
-                android:id="@+id/note_edit"
+                android:id="@+id/et_insert_note"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
         </TableRow>
@@ -87,20 +87,20 @@
         android:paddingTop="5dp">
 
         <Button
-            android:id="@+id/cancel_button"
+            android:id="@+id/btn_insert_cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="clickCancel"
+            android:onClick="onClick"
             android:text="@android:string/cancel"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Button
-            android:id="@+id/ok_button"
+            android:id="@+id/btn_insert_ok"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="clickOk"
+            android:onClick="onClick"
             android:text="@android:string/ok"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
     </LinearLayout>
